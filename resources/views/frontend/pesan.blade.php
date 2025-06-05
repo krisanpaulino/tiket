@@ -267,7 +267,7 @@
                     jam: jam
                 },
                 success: function(data) {
-                    // console.log(data);
+                    console.log(data);
 
                     $('#available').text('Kursi Tersedia : ' + data.available);
                     $('#kursi').attr('max', data.available);
