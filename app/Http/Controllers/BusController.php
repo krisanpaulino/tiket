@@ -230,4 +230,10 @@ class BusController extends Controller
 
         return redirect(route('rute.index'))->with('message', 'successToast("Rute diubah")');
     }
+    function deleteRute(Request $request)
+    {
+        $rute_id = $request->rute_id;
+        Rute::destroy($rute_id);
+        return back()->with('success', 'Data Rute berhasil dihapus')->with('message', 'successToast("Data Rute berhasil dihapus")');
+    }
 }
