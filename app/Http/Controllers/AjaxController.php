@@ -53,6 +53,12 @@ class AjaxController extends Controller
         $bus = $request->bus;
         $rute = $request->rute;
 
+        $input = [
+            'tanggal' => $tanggal,
+            'jam' => $jam,
+            'bus' => $bus,
+            'rute' => $rute,
+        ];
         $jadwal = Jadwal::where('tgl_jalan', $tanggal)
             ->where('jam_jalan', $jam)
             ->where('bus_id', $bus)
@@ -64,7 +70,7 @@ class AjaxController extends Controller
         $available = $bus->jumlah_kursi - $booked;
         $data['available'] = $available;
         $data['jadwal_id'] = $jadwal->jadwal_id;
-        echo json_encode($data);
+        echo json_encode($input);
     }
 
     function getHarga(Request $request)
