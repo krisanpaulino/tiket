@@ -70,7 +70,7 @@ class AjaxController extends Controller
         $available = $bus->jumlah_kursi - $booked;
         $data['available'] = $available;
         $data['jadwal_id'] = $jadwal->jadwal_id;
-        echo json_encode($input);
+        echo json_encode($data);
     }
 
     function getHarga(Request $request)
