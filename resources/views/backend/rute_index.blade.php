@@ -59,7 +59,7 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li><a class="dropdown-item edit-item-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#edit" data-id="{{ $r->jadwal_id }}"
+                                                        data-bs-target="#edit" data-id="{{ $r->rute_id }}"
                                                         data-asal="{{ $r->asal }}" data-tujuan="{{ $r->tujuan }}"
                                                         data-harga="{{ $r->harga }}"><i
                                                             class="ri-pencil-fill align-bottom me-2 text-muted"></i>
