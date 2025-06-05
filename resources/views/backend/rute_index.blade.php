@@ -123,7 +123,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form class="form" action="{{ route('jadwal.delete') }}" method="post">
+                <form class="form" action="{{ route('rute.delete') }}" method="post">
                     @csrf
                     <input type="hidden" name="rute_id" id="kodeitemhapus" value="">
                     <div class="modal-body">
@@ -140,7 +140,7 @@
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form class="form" action="{{ route('jadwal.update') }}" method="post">
+                <form class="form" action="{{ route('rute.update') }}" method="post">
                     @csrf
                     <input type="hidden" name="rute_id" id="kodeitemedit" value="">
                     <div class="modal-body">
