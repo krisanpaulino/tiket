@@ -63,7 +63,8 @@ class User extends Authenticatable
     function penumpang(): HasOne
     {
         return $this->hasOne(Penumpang::class, 'user_id', 'user_id')->withDefault([
-            'nama_penumpang' => 'Not Found'
+            'nama_penumpang' => 'Not Found',
+            'no_hp' => 'Not Found'
         ]);
     }
 
