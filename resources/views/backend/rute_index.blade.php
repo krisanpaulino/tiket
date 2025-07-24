@@ -24,11 +24,11 @@
                     <h5 class="card-title mb-0">Data Rute</h5>
                 </div>
                 <div class="card-body">
-                    {{-- <div class="text-end mb-4">
+                    <div class="text-end mb-4">
                         <a href="javascript: void(0);" data-bs-toggle="modal" data-bs-target="#tambah"
                             class="btn btn-primary"><i class="bx bx-plus"></i> Tambah
                             Rute</a>
-                    </div> --}}
+                    </div>
                     <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle"
                         style="width:100%">
                         <thead>
