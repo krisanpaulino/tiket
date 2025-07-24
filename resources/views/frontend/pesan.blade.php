@@ -204,7 +204,7 @@
                     $.each(data, function(i, item) {
                         $('#bus').append($('<option>', {
                             value: item.bus_id,
-                            text: item.bus.nama_bus
+                            text: item.bus.no_plat
                         }));
                     });
                 },

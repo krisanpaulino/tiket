@@ -30,6 +30,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">No</th>
+                                <th>Kode Booking</th>
                                 <th>Tanggal Transaksi</th>
                                 <th>Rute</th>
                                 <th>Bus</th>
@@ -48,6 +49,7 @@
                             @foreach ($transaksi as $r)
                                 <tr>
                                     <td>{{ $no++ }}</td>
+                                    <td>{{ $r->kode_booking }}</td>
                                     <td>{{ $r->tgl_pesan }}</td>
                                     <td>{{ $r->jadwal->rute->asal }} - {{ $r->jadwal->rute->tujuan }}</td>
                                     <td>{{ $r->jadwal->bus->nama_bus }}</td>

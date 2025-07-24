@@ -35,14 +35,14 @@
                                         placeholder="No Plat" name="no_plat" id="plat" value="<?= old('no_plat') ?>">
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama Bus</label>
                                     <input type="text" class="form-control @error('nama_bus') is-invalid @enderror"
                                         placeholder="Nama Bus" name="nama_bus" id="nama"
                                         value="<?= old('nama_bus') ?>">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="kursi" class="form-label">Jumlah Kursi</label>

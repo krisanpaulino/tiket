@@ -24,11 +24,11 @@
                     <h5 class="card-title mb-0">Data Rute</h5>
                 </div>
                 <div class="card-body">
-                    <div class="text-end mb-4">
+                    {{-- <div class="text-end mb-4">
                         <a href="javascript: void(0);" data-bs-toggle="modal" data-bs-target="#tambah"
                             class="btn btn-primary"><i class="bx bx-plus"></i> Tambah
                             Rute</a>
-                    </div>
+                    </div> --}}
                     <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle"
                         style="width:100%">
                         <thead>
@@ -63,7 +63,7 @@
                                                         data-asal="{{ $r->asal }}" data-tujuan="{{ $r->tujuan }}"
                                                         data-harga="{{ $r->harga }}"><i
                                                             class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                        Edit</a></li>
+                                                        Edit Harga</a></li>
                                                 <li>
                                                     <a class="dropdown-item remove-item-btn" data-bs-toggle="modal"
                                                         data-bs-target="#hapus" data-id="{{ $r->rute_id }}">
@@ -93,14 +93,14 @@
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Asal</label>
                                 <input type="text" class="form-control @error('asal') is-invalid @enderror"
-                                    placeholder="Rute Asal" name="asal" value="{{ old('asal') }}">
+                                    placeholder="Rute Asal" name="asal" value="{{ old('asal') }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Tujuan</label>
                                 <input type="text" class="form-control @error('tujuan') is-invalid @enderror"
-                                    placeholder="Rute Tujuan" name="tujuan" value="{{ old('tujuan') }}">
+                                    placeholder="Rute Tujuan" name="tujuan" value="{{ old('tujuan') }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-12">

@@ -73,10 +73,10 @@ class LaporanController extends Controller
     {
         $transaksi = Transaksi::where('transaksi_id', $transaksi_id)->first();
         $tiket = $transaksi->tiket;
-
+        // return view('testiket');
         $data['tiket'] = $tiket;
         $data['transaksi'] = $transaksi;
-        $pdf = Pdf::loadView('tiket-pdf', $data);
+        $pdf = Pdf::loadView('testiket', $data)->setPaper('a4');
 
         return $pdf->download('Tiket-' . $transaksi->order_id . '.pdf');
     }

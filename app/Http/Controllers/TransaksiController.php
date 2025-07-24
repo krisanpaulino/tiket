@@ -71,7 +71,8 @@ class TransaksiController extends Controller
             'token' => $snapToken,
             'order_id' => $order_id,
             'jadwal_id' => $validated['jadwal_id'],
-            'total' => $total
+            'total' => $total,
+            'kode_booking' => Str::random(5),
         ];
 
         $transaksi = new Transaksi();
@@ -84,13 +85,12 @@ class TransaksiController extends Controller
         $no_kursi = 1;
         $counter = 0;
         while ($counter < $validated['jumlah_tiket'] && $no_kursi <= $bus->jumlah_kursi) {
-            $tiket = Tiket::where('transaksi_id', $transaksi->transaksi_id)
+            $tiket = Tiket::join('transaksi', 'transaksi.transaksi_id', 'tiket.transaksi_id')->where('jadwal_id', $transaksi->jadwal_id)
                 ->where('no_kursi', $no_kursi)->first();
             if ($tiket == null) {
                 $dataTiket = [
                     'transaksi_id' => $transaksi->transaksi_id,
-                    'kode_booking' => Str::random(5),
-                    'status_checkin' => 0,
+                    'status_checkin' => 1,
                     'no_kursi' => $no_kursi
                 ];
                 Tiket::insert($dataTiket);

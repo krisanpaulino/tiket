@@ -131,13 +131,13 @@
                                     placeholder="No Plat" name="no_plat" id="plat" value="">
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        {{-- <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama Bus</label>
                                 <input type="text" class="form-control @error('nama_bus') is-invalid @enderror"
                                     placeholder="Nama Bus" name="nama_bus" id="nama" value="">
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="kursi" class="form-label">Jumlah Kursi</label>
@@ -184,7 +184,7 @@
         });
         $('#edit').on('show.bs.modal', function(event) {
             var id = $(event.relatedTarget).data('id');
-            var nama = $(event.relatedTarget).data('nama');
+            // var nama = $(event.relatedTarget).data('nama');
             var plat = $(event.relatedTarget).data('plat');
             var kursi = $(event.relatedTarget).data('kursi');
             console.log(nama);

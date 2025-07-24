@@ -73,13 +73,13 @@ class BusController extends Controller
     {
         //Validasi
         $validated = $request->validate([
-            'nama_bus' => 'required',
+            // 'nama_bus' => 'required',
             'no_plat' => 'required',
             'jumlah_kursi' => 'required',
         ]);
         // dd($path);
 
-
+        $validated['nama_bus'] = 'Paris Indah';
         Bus::insert($validated);
 
         return redirect(route('bus.index'))->with('message', 'successToast("Bus ditambahkan")');
@@ -89,7 +89,7 @@ class BusController extends Controller
         $bus_id = $request->bus_id;
         //Validasi
         $validated = $request->validate([
-            'nama_bus' => 'required',
+            // 'nama_bus' => 'required',
             'no_plat' => 'required',
             'jumlah_kursi' => 'required',
         ]);
@@ -219,8 +219,8 @@ class BusController extends Controller
         $rute_id = $request->rute_id;
         //Validasi
         $validated = $request->validate([
-            'asal' => 'required',
-            'tujuan' => 'required',
+            // 'asal' => 'required',
+            // 'tujuan' => 'required',
             'harga' => 'required',
         ]);
         // $user = User::where('email', Session::get('email'))->first();

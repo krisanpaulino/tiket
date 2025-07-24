@@ -42,6 +42,10 @@
                                     <td>{{ $transaksi->status }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Kode Booking</th>
+                                    <td>{{ $transaksi->kode_booking }}</td>
+                                </tr>
+                                <tr>
                                     <td>Jadwal</td>
                                     <td>{{ $transaksi->jadwal->jam_jalan }} - {{ $transaksi->jadwal->jam_sampai }}</td>
                                 </tr>
@@ -69,7 +73,6 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <th>No</th>
-                                    <th>Kode Booking</th>
                                     <th>Nomor Kursi</th>
                                     <th>Status Checkin</th>
                                 </thead>
@@ -80,7 +83,6 @@
                                     @foreach ($transaksi->tiket as $tiket)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $tiket->kode_booking }}</td>
                                             <td>{{ $tiket->no_kursi }}</td>
                                             <td>
                                                 @if ($tiket->status_checkin)
