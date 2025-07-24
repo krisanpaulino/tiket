@@ -93,14 +93,14 @@
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Asal</label>
                                 <input type="text" class="form-control @error('asal') is-invalid @enderror"
-                                    placeholder="Rute Asal" name="asal" value="{{ old('asal') }}" disabled>
+                                    placeholder="Rute Asal" name="asal" value="{{ old('asal') }}">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Tujuan</label>
                                 <input type="text" class="form-control @error('tujuan') is-invalid @enderror"
-                                    placeholder="Rute Tujuan" name="tujuan" value="{{ old('tujuan') }}" disabled>
+                                    placeholder="Rute Tujuan" name="tujuan" value="{{ old('tujuan') }}">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -148,14 +148,14 @@
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Asal</label>
                                 <input type="text" class="form-control @error('asal') is-invalid @enderror"
-                                    placeholder="Rute Asal" name="asal" id="asal">
+                                    placeholder="Rute Asal" name="asal" id="asal" disabled>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Rute Tujuan</label>
                                 <input type="text" class="form-control @error('tujuan') is-invalid @enderror"
-                                    placeholder="Rute Tujuan" name="tujuan" id="tujuan" }}">
+                                    placeholder="Rute Tujuan" name="tujuan" id="tujuan" disabled>
                             </div>
                         </div>
                         <div class="col-md-12">
