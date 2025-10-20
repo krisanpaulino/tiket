@@ -20,54 +20,10 @@ class BusController extends Controller
         return view('backend.bus_index', compact('bus', 'title'));
     }
 
-    function kategori()
-    {
-        $title = 'Data Kategori';
-        $kategori = Kategori::all();
-        return view('backend.kategori', compact('kategori', 'title'));
-    }
-
-    function insertKategori(Request $request): RedirectResponse
-    {
-        $validated = $request->validate([
-            'nama_kategori' => 'required',
-        ]);
-
-        Kategori::insert($validated);
-
-        return back()->with('message', 'successToast("Kategori berhasil ditambahkan")');
-    }
-    function deleteKategori(Request $request)
-    {
-        $kategori_id = $request->kategori_id;
-        Kategori::destroy($kategori_id);
-        return back()->with('success', 'Data kategori berhasil dihapus')->with('message', 'successToast("Data kategori berhasil dihapus")');
-    }
-    function updateKategori(Request $request): RedirectResponse
-    {
-        $validated = $request->validate([
-            'kategori_id' => 'required',
-            'nama_kategori' => 'required',
-        ]);
-        $kategori_id = $request->kategori_id;
-        $kategori = Kategori::find($kategori_id);
-        $kategori->update($validated);
-
-        return back()->with('message', 'successToast("Kategori berhasil diubah")');
-    }
-
     function tambah()
     {
         $title = 'Tambah Produk';
         return view('backend.bus_form', compact('title'));
-    }
-    function edit($id)
-    {
-        $produk = Produk::find($id);
-        $kategori = Kategori::all();
-        $penenun = Penenun::orderBy('nama_penenun')->get();
-        $title = 'Edit Produk';
-        return view('backend.produk_edit', compact('title', 'produk', 'kategori', 'penenun'));
     }
     function store(Request $request): RedirectResponse
     {
@@ -109,22 +65,6 @@ class BusController extends Controller
     }
 
     //Untuk Admin
-    function tersedia()
-    {
-        $title = 'Produk Tersedia';
-        $produk = Produk::where('stok', '>', '0')->get();
-
-        return view('backend.produk_tersedia', compact('title', 'produk'));
-    }
-
-    function byPenenun($penenun_id)
-    {
-        $penenun = Penenun::find($penenun_id);
-        $produk = Produk::where('penenun_id', '=', $penenun_id)->get();
-        $title = 'Produk Penenun';
-
-        return view('backend.produk_penenun', compact('title', 'produk', 'penenun'));
-    }
 
     function jadwal($bus_id)
     {
@@ -207,6 +147,10 @@ class BusController extends Controller
             'tujuan' => 'required',
             'harga' => 'required',
         ]);
+
+        if (Rute::where('asal', $validated['asal'])->where('tujuan', $validated['tujuan'])->exists()) {
+            return back()->with('message', 'dangerToast("Rute sudah ada")')->withInput();
+        }
         // $user = User::where('email', Session::get('email'))->first();
 
         Rute::insert($validated);
