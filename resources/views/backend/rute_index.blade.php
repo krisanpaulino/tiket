@@ -64,13 +64,13 @@
                                                         data-harga="{{ $r->harga }}"><i
                                                             class="ri-pencil-fill align-bottom me-2 text-muted"></i>
                                                         Edit Harga</a></li>
-                                                {{-- <li>
+                                                <li>
                                                     <a class="dropdown-item remove-item-btn" data-bs-toggle="modal"
                                                         data-bs-target="#hapus" data-id="{{ $r->rute_id }}">
                                                         <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
                                                         Delete
                                                     </a>
-                                                </li> --}}
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
@@ -199,6 +199,7 @@
 @section('scripts')
     <script>
         $('#hapus').on('show.bs.modal', function(event) {
+            console.log('here');
 
             var kode = $(event.relatedTarget).data('id');
             $(this).find('#kodeitemhapus').attr("value", kode);

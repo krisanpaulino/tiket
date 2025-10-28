@@ -94,8 +94,8 @@ Route::prefix('owner')->group(function () {
     Route::get('/laporan', [LaporanController::class, 'laporanPage'])->name('owner.laporan');
     Route::get('/laporan/cetak', [LaporanController::class, 'cetak'])->name('owner.laporan.cetak');
 
-    // Route::get('/rute', [BusController::class, 'rute'])->name('rute.index');
-    // Route::post('/rute/store', [BusController::class, 'storeRute'])->name('rute.store');
-    // Route::post('/rute/update', [BusController::class, 'updateRute'])->name('rute.update');
-    // Route::post('/rute/delete', [BusController::class, 'deleteRute'])->name('rute.delete');
+    Route::get('/rute', [BusController::class, 'rute'])->name('rute.index');
+    Route::post('/rute/store', [BusController::class, 'storeRute'])->name('rute.store');
+    Route::post('/rute/update', [BusController::class, 'updateRute'])->name('rute.update');
+    Route::post('/rute/delete', [BusController::class, 'deleteRute'])->name('rute.delete');
 });
